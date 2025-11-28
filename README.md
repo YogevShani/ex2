@@ -24,7 +24,7 @@ GitHub Pages Website
 ------------------------------------------------------------
 
 View the project online here:
-https://your-username.github.io/ex2
+https://yogevshani.github.io/ex2
 
 (Replace with your actual GitHub Pages link)
 
