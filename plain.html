@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>חלוקה עם Flexbox</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left-panel {
+      flex: 0 0 20%;
+      background-color: white;
+      border: 4px solid red;
+      margin-right: 10px;
+    }
+
+    .right-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      border: 4px solid red;
+      background-color: white;
+    }
+
+    .row {
+      flex: 1;
+      display: flex;
+      margin-bottom: 1%;
+    }
+
+    .row:last-child {
+      margin-bottom: 0;
+    }
+
+    /* שורה 1 */
+    .row-1 .box {
+      flex: 1;
+      margin-right: 2%;
+      background-color: white;
+      border: 4px solid red;
+    }
+
+    .row-1 .box:last-child {
+      margin-right: 0;
+    }
+
+    /* שורה 2 */
+    .row-2 {
+      display: flex;
+    }
+
+    .row-2-left {
+      flex: 1;
+      margin-right: 4%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .row-2-left .box {
+      flex: 1;
+      background-color: white;
+      border: 4px solid red;
+      margin-bottom: 10px;
+    }
+
+    .row-2-left .box:last-child {
+      margin-bottom: 0;
+    }
+
+    .row-2-right {
+      flex: 1;
+      background-color: white;
+      border: 4px solid red;
+    }
+
+    /* שורה 3 */
+    .row-3 .wide {
+      flex: 2;
+      margin-right: 4%;
+      background-color: white;
+      border: 4px solid red;
+    }
+
+    .row-3 .narrow {
+      flex: 1;
+      background-color: white;
+      border: 4px solid red;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .left-panel {
+        flex: none;
+        width: 100%;
+        margin: 0;
+        height: auto;
+      }
+
+      .right-wrapper {
+        flex: none;
+        width: 100%;
+      }
+
+      .row {
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+
+      .row-1 .box,
+      .row-2-left,
+      .row-2-right,
+      .row-3 .wide,
+      .row-3 .narrow {
+        flex: none;
+        width: 100%;
+        margin: 0 0 10px 0;
+        height: 100px;
+      }
+
+      .row-2-left .box {
+        height: 100px;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="left-panel"></div>
+
+  <div class="right-wrapper">
+
+    <!-- שורה 1 -->
+    <div class="row row-1">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <!-- שורה 2 -->
+    <div class="row row-2">
+      <div class="row-2-left">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <div class="row-2-right"></div>
+    </div>
+
+    <!-- שורה 3 -->
+    <div class="row row-3">
+      <div class="wide"></div>
+      <div class="narrow"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
